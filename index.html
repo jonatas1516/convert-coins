@@ -10,49 +10,54 @@
 
 <body>
   <main>
-    <section>
-      <section>
-        <img src="./assets/image/logo.gif" alt="cambio-moeda">
+    <section class="principal">
+      <section class="title-section">
+        <h1>Conversor de Moedas</h1>
       </section>
 
-      <section>
-        <form>
-          <select>
-            <option></option>
-            <option>€ - Euro</option>
-            <option>£ - Libra</option>
-            <option>BTC - Bitcoin</option>
-            <option>R$ - Real Brasileiro</option>
-            <option>US$ - Dólar Americano</option>
-          </select>
+      <section class="form-section">
+        <form class="form">
+          <label class="label" for="de">Converter <b>de</b>:
+            <select class="selecao" id="select-de">
+              <option class="opcao" value="0"></option>
+              <option class="opcao" value="1">€ - Euro</option>
+              <option class="opcao" value="2">£ - Libra</option>
+              <option class="opcao" value="3">BTC - Bitcoin</option>
+              <option class="opcao" value="4">R$ - Real Brasileiro</option>
+              <option class="opcao" value="5">US$ - Dólar Americano</option>
+            </select>
+          </label>
 
-          <select>
-            <option></option>
-            <option>€ - Euro</option>
-            <option>£ - Libra</option>
-            <option>BTC - Bitcoin</option>
-            <option>R$ - Real Brasileiro</option>
-            <option>US$ - Dólar Americano</option>
-          </select>
+          <label for="para">Coverter <b>para</b>:
+            <select class="selecao" id="select-para">
+              <option class="opcao" value="0"></option>
+              <option class="opcao" value="1">€ - Euro</option>
+              <option class="opcao" value="2">£ - Libra</option>
+              <option class="opcao" value="3">BTC - Bitcoin</option>
+              <option class="opcao" value="4">R$ - Real Brasileiro</option>
+              <option class="opcao" value="5">US$ - Dólar Americano</option>
+            </select>
+          </label>
 
-          <button>Converter</button>
+          <label for="valor"><b>Valor</b>
+            <input class="input" placeholder="Digite o valor">
+          </label>
+
+          <button class="btn">Converter</button>
         </form>
+
+        <section class="img-converter">
+          <img class="img-cd" src="./assets/image/bitcoin 1.png" alt="pais">
+          <p class="pm1">Moeda</p>
+          <p class="valor1">Valor</p>
+
+          <img class="seta" src="./assets/image/Vector@2x-2.png" alt="pais">
+
+          <img class="img-cp" src="./assets/image/brasil 2-3.png" alt="pais">
+          <p class="pm2">Moeda</p>
+          <p class="valor2">Valor</p>
+        </section>
       </section>
-
-      <section>
-        <div>
-          <img src="" alt="pais">
-        </div>
-
-        <div>
-          <img src="" alt="pais">
-        </div>
-
-        <div>
-          <img src="" alt="pais">
-        </div>
-      </section>
-    </section>
   </main>
 </body>
 
