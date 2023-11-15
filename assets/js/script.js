@@ -30,11 +30,20 @@ const coinToText = document.querySelector(".coin-to");
 //___ .value-to (HTML) = valueToText (JS)
 const valueToText = document.querySelector(".value-to");
 
-//Value dolar now
-const dollarToday = 5.22;
+//Value EURO now
+const eurToday = 5.27;
 
-//Value euro now
-const euroToday = 6.22;
+//Value LIBRA now
+const gbpToday = 6.04;
+
+//Value BITCOIN now
+const btcToday = 0;
+
+//Value REAL now
+const realToday = 1;
+
+//Value DOLLAR now
+const usdToday = 4.86;
 
 ////___ .input (HTML) = inputCoinValue (JS)
 const inputCoinValue = document.querySelector(".input");
@@ -42,7 +51,7 @@ const inputCoinValue = document.querySelector(".input");
 //function Convert Value
 function convertValue() {
   //___ SELECT FROM
-  if (selectFrom.value == "brl") {
+  if (selectFrom.value == "real") {
     valueFromText.innerHTML = new Intl.NumberFormat("pt-BR", {
       style: "currency",
       currency: "BRL",
@@ -55,14 +64,35 @@ function convertValue() {
     valueToText.innerHTML = new Intl.NumberFormat("de-DE", {
       style: "currency",
       currency: "EUR",
-    }).format(inputCoinValue.value / euroToday);
+    }).format(inputCoinValue.value / eurToday);
+  }
+
+  if (selectTo.value == "libra") {
+    valueToText.innerHTML = new Intl.NumberFormat("en-GB", {
+      style: "currency",
+      currency: "GBP",
+    }).format(inputCoinValue.value / gbpToday);
+  }
+
+  if (selectTo.value == "bitcoin") {
+    valueToText.innerHTML = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "BTC", //₿ ETH: "Ξ",
+    }).format(inputCoinValue.value / btcToday);
+  }
+
+  if (selectTo.value == "real") {
+    valueToText.innerHTML = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(inputCoinValue.value / realToday);
   }
 
   if (selectTo.value == "dollar") {
     valueToText.innerHTML = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
-    }).format(inputCoinValue.value / dollarToday);
+    }).format(inputCoinValue.value / usdToday);
   }
   //___ END ___ SELECT TO
 }
@@ -81,7 +111,7 @@ function changeCoin() {
     imgFrom.src = "./assets/image/coin.png";
   }
 
-  if (selectFrom.value == "brl") {
+  if (selectFrom.value == "real") {
     coinFromText.innerHTML = "REAL";
     imgFrom.src = "./assets/image/brazil.png";
   }
@@ -95,8 +125,23 @@ function changeCoin() {
   }
 
   if (selectTo.value == "euro") {
-    coinToText.innerHTML = "EURO";
+    coinToText.innerHTML = "Euro";
     imgTo.src = "./assets/image/euro.png";
+  }
+
+  if (selectTo.value == "libra") {
+    coinToText.innerHTML = "Libra Esterlina";
+    imgTo.src = "./assets/image/gbp.png";
+  }
+
+  if (selectTo.value == "bitcoin") {
+    coinToText.innerHTML = "Bitcoin";
+    imgTo.src = "./assets/image/bitcoin.png";
+  }
+
+  if (selectTo.value == "real") {
+    coinToText.innerHTML = "Real";
+    imgTo.src = "./assets/image/brazil.png";
   }
 
   if (selectTo.value == "dollar") {
