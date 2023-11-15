@@ -1,93 +1,109 @@
-//seleciona o botão no HTML
+//___ .btn (HTML) = btn (JS)
 const btn = document.querySelector(".btn");
 
+//add event "click" .btn (HTML)
+btn.addEventListener("click", convertValue);
+
+//_____________________ PART FROM _____________________//
+//___ .select-from (HTML) = selectFrom (JS)
 const selectFrom = document.querySelector(".select-from");
 
-const selectTo = document.querySelector(".select-to");
-
-//recebe o valor do dolar atual
-const dollarToday = 5.22;
-
-//recebe o valor do euro atual
-const euroToday = 6.22;
-
-//seleciona o valor que foi digitado no input pelo usuario
-const inputCoinValue = document.querySelector(".input");
-
+//___ .img-from (HTML) = imgFrom (JS)
 const imgFrom = document.querySelector(".img-from");
+
+//___ .coin-from (HTML) =  coinFromText (JS)
 const coinFromText = document.querySelector(".coin-from");
-//seleciona o valor que será convertido (from)
+
+//___ .value-from (HTML) = valueFromText (JS)
 const valueFromText = document.querySelector(".value-from");
 
-const imgTo = document.querySelector(".img-to").src;
+//_____________________ PART TO _____________________//
+//___ .select-to (HTML) = selectTo (JS)
+const selectTo = document.querySelector(".select-to");
+
+//___ .img-to (HTML) = imgTo (JS)
+const imgTo = document.querySelector(".img-to");
+
+//___ .coin-to (HTML) =  coinToText (JS)
 const coinToText = document.querySelector(".coin-to");
-//seleciona o valor que foi convertido (to)
+
+//___ .value-to (HTML) = valueToText (JS)
 const valueToText = document.querySelector(".value-to");
 
-//função para converter o valor
+//Value dolar now
+const dollarToday = 5.22;
+
+//Value euro now
+const euroToday = 6.22;
+
+////___ .input (HTML) = inputCoinValue (JS)
+const inputCoinValue = document.querySelector(".input");
+
+//function Convert Value
 function convertValue() {
-  //__SELECT FROM
+  //___ SELECT FROM
   if (selectFrom.value == "brl") {
-    //substitui o texto original, pelo valor do input digitado pelo usuario
-    // e com a formatação da moeda
     valueFromText.innerHTML = new Intl.NumberFormat("pt-BR", {
       style: "currency",
       currency: "BRL",
     }).format(inputCoinValue.value);
-  } //__END __SELECT FROM
+  }
+  //___ END ___ SELECT FROM
 
-  //__SELCT TO
+  //___ SELECT TO
   if (selectTo.value == "euro") {
-    //substitui o texto original, pelo valor convertido
-    // e com a formatação da moeda
     valueToText.innerHTML = new Intl.NumberFormat("de-DE", {
       style: "currency",
       currency: "EUR",
-
-      //pega o valor do input e divide pelo valor do euro atual
     }).format(inputCoinValue.value / euroToday);
   }
 
   if (selectTo.value == "dollar") {
-    //substitui o texto original, pelo valor convertido
-    // e com a formatação da moeda
     valueToText.innerHTML = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
-
-      //pega o valor do input e divide pelo valor do dolar atual
     }).format(inputCoinValue.value / dollarToday);
-  } //__END __SELECT TO
+  }
+  //___ END ___ SELECT TO
 }
 
-btn.addEventListener("click", convertValue);
+//add event "change" item .select-from (HTML)
 selectFrom.addEventListener("change", changeCoin);
-selectFrom.addEventListener("change", convertValue);
-selectTo.addEventListener("change", convertValue);
+
+//add event "change" item .select-to (HTML)
 selectTo.addEventListener("change", changeCoin);
 
 function changeCoin() {
-  //__SELECT FROM
+  //___ SELECT FROM
   if (selectFrom.value == "0") {
     coinFromText.innerHTML = "Moeda";
     valueFromText.innerHTML = "Valor";
+    imgFrom.src = "./assets/image/coin.png";
   }
 
   if (selectFrom.value == "brl") {
     coinFromText.innerHTML = "REAL";
-  } //__END __SELECT FROM
+    imgFrom.src = "./assets/image/brazil.png";
+  }
+  //___ END ___ SELECT FROM
+
+  //___ SELECT TO
+  if (selectTo.value == "0") {
+    coinToText.innerHTML = "Moeda";
+    valueToText.innerHTML = "Valor";
+    imgTo.src = "./assets/image/coin.png";
+  }
 
   if (selectTo.value == "euro") {
     coinToText.innerHTML = "EURO";
+    imgTo.src = "./assets/image/euro.png";
   }
 
   if (selectTo.value == "dollar") {
-    coinToText.innerHTML = "Dólar";
-  } //__END __SELECT TO
-
-  if (selectTo.value == "0") {
-    console.log("TESTE");
-    console.log(imgTo);
-    imgTo.innerHTML = "src=./assets/image/euro.png";
+    coinToText.innerHTML = "Dólar Americano";
+    imgTo.src = "./assets/image/usa.png";
   }
+  //___ END ___ SELECT TO
+
+  convertValue();
 }
