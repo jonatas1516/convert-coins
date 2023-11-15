@@ -71,6 +71,15 @@
   background-color: rgba(119, 47, 211, 1);
 }
 
+.btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.btn:active {
+  opacity: 0.4;
+}
+
 .img-convert {
   width: 20.4375rem;
   border-radius: 1.25rem;
@@ -88,7 +97,7 @@
   margin: 1rem 0 0.13rem 0;
 }
 
-.arrow {
+.arrow-down {
   width: 3rem;
   align-self: center;
 }
