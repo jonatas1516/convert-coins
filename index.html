@@ -17,8 +17,8 @@
 
       <section class="form-section">
         <form class="form">
-          <label class="label" for="from">Converter <b>de</b>:
-            <select class="select">
+          <label class="label">Converter <b>de</b>:
+            <select class="select" id="select-from">
               <option class="opt" value="0"></option>
               <option class="opt" value="1">€ - Euro</option>
               <option class="opt" value="2">£ - Libra</option>
@@ -28,8 +28,8 @@
             </select>
           </label>
 
-          <label for="to">Coverter <b>para</b>:
-            <select class="select">
+          <label class="label">Coverter <b>para</b>:
+            <select class="select" id="select-to">
               <option class="opt" value="0"></option>
               <option class="opt" value="1">€ - Euro</option>
               <option class="opt" value="2">£ - Libra</option>
@@ -39,12 +39,12 @@
             </select>
           </label>
 
-          <label for="value"><b>Valor</b>
-            <input class="input" placeholder="Digite o valor">
+          <label class="label"><b>Valor</b>
+            <input class="input" id="user-value" placeholder="Digite o valor" value="10">
           </label>
-
-          <button class="btn">Converter</button>
         </form>
+
+        <button class="btn">Converter</button>
 
         <section class="img-convert">
           <img class="img-from" src="./assets/image/brasil.png" alt="bandeira-brasil">
