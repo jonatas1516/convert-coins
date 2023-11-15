@@ -7,7 +7,7 @@
   font-family: "Roboto Flex", sans-serif;
 }
 
-body {
+.body {
   background-color: rgba(138, 81, 252, 1);
   display: flex;
   justify-content: space-evenly;
@@ -40,10 +40,10 @@ body {
   margin: 1rem 1.5rem 0 1.5rem;
 }
 
-.selecao,
+.select,
 .input,
 .btn,
-.opcao {
+.opt {
   width: 20.4375rem;
   height: 3rem;
   font-size: 1rem;
@@ -70,7 +70,7 @@ body {
   background-color: rgba(119, 47, 211, 1);
 }
 
-.img-converter {
+.img-convert {
   width: 20.4375rem;
   border-radius: 1.25rem;
   border: 1px solid #772fd3;
@@ -79,25 +79,25 @@ body {
   margin: 0 1.5rem 1.5rem 1.5rem;
 }
 
-.img-cd,
-.img-cp {
+.img-from,
+.img-to {
   width: 2.75rem;
   height: 2.75rem;
   align-self: center;
   margin: 1rem 0 0.13rem 0;
 }
 
-.seta {
+.arrow {
   width: 3rem;
   align-self: center;
 }
 
-.img-converter p {
+.img-convert p {
   text-align: center;
 }
 
-.valor1,
-.valor2 {
+.value-from,
+.value-to {
   color: black;
   font-weight: 700;
   font-size: 1.25rem;

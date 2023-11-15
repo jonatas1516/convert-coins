@@ -5,57 +5,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <title>Conversor de Moedas</title>
+  <title>Convert Coins</title>
 </head>
 
-<body>
+<body class="body">
   <main>
     <section class="principal">
       <section class="title-section">
-        <h1>Conversor de Moedas</h1>
+        <h1>Converter Moedas</h1>
       </section>
 
       <section class="form-section">
         <form class="form">
-          <label class="label" for="de">Converter <b>de</b>:
-            <select class="selecao" id="select-de">
-              <option class="opcao" value="0"></option>
-              <option class="opcao" value="1">€ - Euro</option>
-              <option class="opcao" value="2">£ - Libra</option>
-              <option class="opcao" value="3">BTC - Bitcoin</option>
-              <option class="opcao" value="4">R$ - Real Brasileiro</option>
-              <option class="opcao" value="5">US$ - Dólar Americano</option>
+          <label class="label" for="from">Converter <b>de</b>:
+            <select class="select">
+              <option class="opt" value="0"></option>
+              <option class="opt" value="1">€ - Euro</option>
+              <option class="opt" value="2">£ - Libra</option>
+              <option class="opt" value="3">BTC - Bitcoin</option>
+              <option class="opt" value="4">R$ - Real Brasileiro</option>
+              <option class="opt" value="5">US$ - Dólar Americano</option>
             </select>
           </label>
 
-          <label for="para">Coverter <b>para</b>:
-            <select class="selecao" id="select-para">
-              <option class="opcao" value="0"></option>
-              <option class="opcao" value="1">€ - Euro</option>
-              <option class="opcao" value="2">£ - Libra</option>
-              <option class="opcao" value="3">BTC - Bitcoin</option>
-              <option class="opcao" value="4">R$ - Real Brasileiro</option>
-              <option class="opcao" value="5">US$ - Dólar Americano</option>
+          <label for="to">Coverter <b>para</b>:
+            <select class="select">
+              <option class="opt" value="0"></option>
+              <option class="opt" value="1">€ - Euro</option>
+              <option class="opt" value="2">£ - Libra</option>
+              <option class="opt" value="3">BTC - Bitcoin</option>
+              <option class="opt" value="4">R$ - Real Brasileiro</option>
+              <option class="opt" value="5">US$ - Dólar Americano</option>
             </select>
           </label>
 
-          <label for="valor"><b>Valor</b>
+          <label for="value"><b>Valor</b>
             <input class="input" placeholder="Digite o valor">
           </label>
 
           <button class="btn">Converter</button>
         </form>
 
-        <section class="img-converter">
-          <img class="img-cd" src="./assets/image/brasil.png" alt="bandeira-brasil">
-          <p class="pm1">Moeda</p>
-          <p class="valor1">Valor</p>
+        <section class="img-convert">
+          <img class="img-from" src="./assets/image/brasil.png" alt="bandeira-brasil">
+          <p class="coin-from">Moeda</p>
+          <p class="value-from">Valor</p>
 
-          <img class="seta" src="./assets/image/seta-baixo.png" alt="seta-para-baixo">
+          <img class="arrow" src="./assets/image/seta-baixo.png" alt="seta-para-baixo">
 
-          <img class="img-cp" src="./assets/image/eua.png" alt="bandeira-eua">
-          <p class="pm2">Moeda</p>
-          <p class="valor2">Valor</p>
+          <img class="img-to" src="./assets/image/eua.png" alt="bandeira-eua">
+          <p class="coin-to">Moeda</p>
+          <p class="value-to">Valor</p>
         </section>
       </section>
   </main>
