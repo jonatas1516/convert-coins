@@ -20,10 +20,10 @@ const inputCoinValue = document.querySelector(".input");
 const btn = document.querySelector(".btn");
 
 //add event "click" .btn (HTML)
-btn.addEventListener("click", teste);
+btn.addEventListener("click", changeCoin);
 
 //add event "click" .btn (HTML)
-btn.addEventListener("click", formatValue);
+//btn.addEventListener("click");
 
 //_____________________ PART FROM _____________________//
 //___ .select-from (HTML) = selectFrom (JS)
@@ -53,8 +53,6 @@ const valueToText = document.querySelector(".value-to");
 
 //function Format Value
 function formatValue() {
-  console.log("função para formartar o valor");
-
   //___ SELECT FROM
   if (selectFrom.value == "euro") {
     valueFromText.innerHTML = new Intl.NumberFormat("de-DE", {
@@ -123,6 +121,7 @@ function formatValue() {
   }
 
   if (selectTo.value == "dollar") {
+    const eua = inputCoinValue.value / usdToday;
     valueToText.innerHTML = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
@@ -207,11 +206,51 @@ function changeCoin() {
   //___ END ___ SELECT TO
 }
 
-function teste() {
-  console.log("aki");
-  const x = inputCoinValue.value / btcToday;
+///buscar ou pensar na solução
+//add event "click" .btn (HTML)
+btn.addEventListener("click", baseReal);
 
-  console.log(x);
+function baseReal() {
+  //___ SELECT TO
+  if (selectTo.value == "euro") {
+    const euro = inputCoinValue.value / eurToday;
+    valueToText.innerHTML = new Intl.NumberFormat("de-DE", {
+      style: "currency",
+      currency: "EUR",
+    }).format(euro);
+  }
+
+  if (selectTo.value == "libra") {
+    const libra = inputCoinValue.value / gbpToday;
+    valueToText.innerHTML = new Intl.NumberFormat("en-GB", {
+      style: "currency",
+      currency: "GBP",
+    }).format(libra);
+  }
+
+  if (selectTo.value == "bitcoin") {
+    const bitcoin = inputCoinValue.value / btcToday;
+    valueToText.innerHTML = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "BTC", //₿ ETH: "Ξ",
+      minimumFractionDigits: 10,
+    }).format(bitcoin);
+  }
+
+  if (selectTo.value == "real") {
+    const real = inputCoinValue.value / realToday;
+    valueToText.innerHTML = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(real);
+  }
+
+  if (selectTo.value == "dollar") {
+    const dollar = inputCoinValue.value / usdToday;
+    valueToText.innerHTML = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(dollar);
+  }
+  //___ END ___ SELECT TO
 }
-
-///inputCoinValue.value / usdToday
