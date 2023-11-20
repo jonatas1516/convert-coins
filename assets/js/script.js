@@ -208,49 +208,247 @@ function changeCoin() {
 
 ///buscar ou pensar na solução
 //add event "click" .btn (HTML)
-btn.addEventListener("click", baseReal);
+btn.addEventListener("click", calcMany);
 
-function baseReal() {
-  //___ SELECT TO
-  if (selectTo.value == "euro") {
-    const euro = inputCoinValue.value / eurToday;
-    valueToText.innerHTML = new Intl.NumberFormat("de-DE", {
-      style: "currency",
-      currency: "EUR",
-    }).format(euro);
+function calcMany() {
+  if (selectFrom.value == "real") {
+    console.log("real select top");
+
+    //___ SELECT TO
+    if (selectTo.value == "euro") {
+      const euro = inputCoinValue.value / eurToday;
+      valueToText.innerHTML = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+      }).format(euro);
+    }
+
+    if (selectTo.value == "libra") {
+      const libra = inputCoinValue.value / gbpToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-GB", {
+        style: "currency",
+        currency: "GBP",
+      }).format(libra);
+    }
+
+    if (selectTo.value == "bitcoin") {
+      const bitcoin = inputCoinValue.value / btcToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "BTC", //₿ ETH: "Ξ",
+        minimumFractionDigits: 10,
+      }).format(bitcoin);
+    }
+
+    if (selectTo.value == "real") {
+      const real = inputCoinValue.value / realToday;
+      valueToText.innerHTML = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(real);
+    }
+
+    if (selectTo.value == "dollar") {
+      const dollar = inputCoinValue.value / usdToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(dollar);
+    }
+    //___ END ___ SELECT TO
   }
 
-  if (selectTo.value == "libra") {
-    const libra = inputCoinValue.value / gbpToday;
-    valueToText.innerHTML = new Intl.NumberFormat("en-GB", {
-      style: "currency",
-      currency: "GBP",
-    }).format(libra);
+  /*
+  //euro
+  if (selectFrom.value == "real") {
+    console.log("real select top");
+
+    //___ SELECT TO
+    if (selectTo.value == "euro") {
+      const euro = inputCoinValue.value / eurToday;
+      valueToText.innerHTML = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+      }).format(euro);
+    }
+
+    if (selectTo.value == "libra") {
+      const libra = inputCoinValue.value / gbpToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-GB", {
+        style: "currency",
+        currency: "GBP",
+      }).format(libra);
+    }
+
+    if (selectTo.value == "bitcoin") {
+      const bitcoin = inputCoinValue.value / btcToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "BTC", //₿ ETH: "Ξ",
+        minimumFractionDigits: 10,
+      }).format(bitcoin);
+    }
+
+    if (selectTo.value == "real") {
+      const real = inputCoinValue.value / realToday;
+      valueToText.innerHTML = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(real);
+    }
+
+    if (selectTo.value == "dollar") {
+      const dollar = inputCoinValue.value / usdToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(dollar);
+    }
+    //___ END ___ SELECT TO
   }
 
-  if (selectTo.value == "bitcoin") {
-    const bitcoin = inputCoinValue.value / btcToday;
-    valueToText.innerHTML = new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "BTC", //₿ ETH: "Ξ",
-      minimumFractionDigits: 10,
-    }).format(bitcoin);
+
+  //libra
+  if (selectFrom.value == "real") {
+    console.log("real select top");
+
+    //___ SELECT TO
+    if (selectTo.value == "euro") {
+      const euro = inputCoinValue.value / eurToday;
+      valueToText.innerHTML = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+      }).format(euro);
+    }
+
+    if (selectTo.value == "libra") {
+      const libra = inputCoinValue.value / gbpToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-GB", {
+        style: "currency",
+        currency: "GBP",
+      }).format(libra);
+    }
+
+    if (selectTo.value == "bitcoin") {
+      const bitcoin = inputCoinValue.value / btcToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "BTC", //₿ ETH: "Ξ",
+        minimumFractionDigits: 10,
+      }).format(bitcoin);
+    }
+
+    if (selectTo.value == "real") {
+      const real = inputCoinValue.value / realToday;
+      valueToText.innerHTML = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(real);
+    }
+
+    if (selectTo.value == "dollar") {
+      const dollar = inputCoinValue.value / usdToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(dollar);
+    }
+    //___ END ___ SELECT TO
   }
 
-  if (selectTo.value == "real") {
-    const real = inputCoinValue.value / realToday;
-    valueToText.innerHTML = new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    }).format(real);
-  }
+  //bitcoin
+  if (selectFrom.value == "real") {
+    console.log("real select top");
 
-  if (selectTo.value == "dollar") {
-    const dollar = inputCoinValue.value / usdToday;
-    valueToText.innerHTML = new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-    }).format(dollar);
+    //___ SELECT TO
+    if (selectTo.value == "euro") {
+      const euro = inputCoinValue.value / eurToday;
+      valueToText.innerHTML = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+      }).format(euro);
+    }
+
+    if (selectTo.value == "libra") {
+      const libra = inputCoinValue.value / gbpToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-GB", {
+        style: "currency",
+        currency: "GBP",
+      }).format(libra);
+    }
+
+    if (selectTo.value == "bitcoin") {
+      const bitcoin = inputCoinValue.value / btcToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "BTC", //₿ ETH: "Ξ",
+        minimumFractionDigits: 10,
+      }).format(bitcoin);
+    }
+
+    if (selectTo.value == "real") {
+      const real = inputCoinValue.value / realToday;
+      valueToText.innerHTML = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(real);
+    }
+
+    if (selectTo.value == "dollar") {
+      const dollar = inputCoinValue.value / usdToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(dollar);
+    }
+    //___ END ___ SELECT TO
+  }*/
+
+  //dollar
+  if (selectFrom.value == "dollar") {
+    console.log("real select top");
+
+    //___ SELECT TO
+    if (selectTo.value == "euro") {
+      const euro = inputCoinValue.value / eurToday;
+      valueToText.innerHTML = new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+      }).format(euro);
+    }
+
+    if (selectTo.value == "libra") {
+      const libra = inputCoinValue.value / gbpToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-GB", {
+        style: "currency",
+        currency: "GBP",
+      }).format(libra);
+    }
+
+    if (selectTo.value == "bitcoin") {
+      const bitcoin = inputCoinValue.value / btcToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "BTC", //₿ ETH: "Ξ",
+        minimumFractionDigits: 10,
+      }).format(bitcoin);
+    }
+
+    if (selectTo.value == "real") {
+      const real = inputCoinValue.value / realToday;
+      valueToText.innerHTML = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      }).format(real);
+    }
+
+    if (selectTo.value == "dollar") {
+      const dollar = inputCoinValue.value / usdToday;
+      valueToText.innerHTML = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(dollar);
+    }
+    //___ END ___ SELECT TO
   }
-  //___ END ___ SELECT TO
 }
