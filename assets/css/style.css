@@ -18,7 +18,7 @@
   text-align: center;
   font-size: 1.5rem;
   text-transform: uppercase;
-  border: 1px solid #bbb;
+  border: 0.063rem solid #bbb;
   border-radius: 1.25rem;
   background-color: #f4f4f4;
 }
@@ -27,7 +27,7 @@
   width: 23.4375rem;
   border-radius: 1.25rem;
   background-color: #f4f4f4;
-  border: 1px solid #bbb;
+  border: 0.063rem solid #bbb;
 }
 
 .form {
@@ -49,14 +49,14 @@
   margin: 0 0 1rem 0;
   border-radius: 0.5rem;
   line-height: 1.125rem;
-  border: 1px solid #bbb;
+  border: 0.063rem solid #bbb;
   background: white;
 }
 
 .select-to,
 .select-from,
 .input {
-  padding-left: 1.5rem;
+  padding: 0 0 0 1.5rem;
 }
 
 .label {
@@ -85,7 +85,7 @@
 .img-convert {
   width: 20.4375rem;
   border-radius: 1.25rem;
-  border: 1px solid #772fd3;
+  border: 0.063rem solid #772fd3;
   display: flex;
   flex-direction: column;
   margin: 0 1.5rem 1.5rem 1.5rem;
