@@ -402,7 +402,7 @@ function calcMany() {
       }).format(dollar);
     }
     //___ END ___ SELECT TO
-  }*/
+  }
 
   //dollar
   if (selectFrom.value == "dollar") {
@@ -450,5 +450,5 @@ function calcMany() {
       }).format(dollar);
     }
     //___ END ___ SELECT TO
-  }
+  }*/
 }
