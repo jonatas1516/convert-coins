@@ -8,4 +8,4 @@ Development of a website that displays the "Currency Convert".
 
 <!-- <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="c" />-->
 
-<img src="./assets/image/convert-coins.png" alt="convert-coins" width="250px" />
+<img src="./assets/img/convert-coins.png" alt="convert-coins" width="250px" />
